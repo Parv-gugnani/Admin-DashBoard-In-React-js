@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import "./App.css";
+import { useStateContext } from "./contexts/ContextProvider";
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
@@ -27,7 +28,8 @@ import {
 
 //implementation
 const App = () => {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
+
   return (
     <div>
       <BrowserRouter>
